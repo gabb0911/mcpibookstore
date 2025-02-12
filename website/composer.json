@@ -1,0 +1,12 @@
+{
+    "require": {
+        "php": ">=8.1",
+        "kreait/firebase-php": "^6.0",
+        "kreait/firebase-tokens": "^2.0.1"
+    },
+    "config": {
+        "platform": {
+            "php": "8.1"
+        }
+    }
+}

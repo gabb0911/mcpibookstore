@@ -1,0 +1,16 @@
+{
+  "rules": {
+    "users": {
+      ".read": "auth != null",
+      ".write": "!exists(/users/$uid) || $uid === auth.uid"
+    },
+    "uniformOrders": {
+      ".read": "auth != null && auth.uid == resource.data.uid",
+      ".write": "auth != null && auth.uid == resource.data.uid"
+    },
+    "public": {
+      ".read": true,
+      ".write": false
+    }
+  }
+}

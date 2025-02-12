@@ -1,0 +1,37 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() &&
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == "admin";
+    }
+
+    // Allow users to read/write their own profile data
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // PE Uniform Orders collection rules
+    match /peUniformOrders/{orderId} {
+      allow create: if isAuthenticated();
+      allow read: if isAuthenticated();
+      allow update: if isAuthenticated() && (
+        request.auth.uid == resource.data.userId ||
+        isAdmin()
+      );
+      allow delete: if isAdmin();
+    }
+
+    // Allow access to any other collections needed for basic functionality
+    match /{document=**} {
+      allow read, write: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+  }
+}

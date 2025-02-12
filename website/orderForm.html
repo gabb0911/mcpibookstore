@@ -95,7 +95,7 @@
                         <div class="row">
                             <div class="col-md-4 mb-3">
                                 <label for="age" class="form-label">Age</label>
-                                <input type="number" class="form-control" id="age" placeholder="Enter your age" min="5" max="25" required>
+                                <input type="number" class="form-control" id="age" placeholder="Enter your age" required>
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="grade" class="form-label">Grade Level</label>
@@ -107,7 +107,7 @@
                                 </select>
                             </div>
                             <div class="col-md-4 mb-3">
-                                <label for="section" class="form-label">Section</label>
+                                <label for="section" class="form-label">Grade & Section</label>
                                 <input type="text" class="form-control" id="section" required>
                             </div>
                         </div>
@@ -132,7 +132,7 @@
                             </div>
                         </div>
 
-                        <div class="mb-3">
+                        <div class="mb-3">  
                             <label for="price" class="form-label">Price</label>
                             <input type="text" class="form-control" id="price" readonly>
                         </div>
@@ -304,7 +304,7 @@
                         firstName: document.getElementById('firstName').value.trim(),
                         lastName: document.getElementById('lastName').value.trim(),
                         email: user.email,
-                        age: parseInt(document.getElementById('age').value, 3),
+                        age: parseInt(document.getElementById('age').value, 10),
                         grade: document.getElementById('grade').value,
                         section: document.getElementById('section').value.trim(),
                         uniformType: document.getElementById('uniformType').value,
