@@ -1,0 +1,400 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    padding-bottom: 60px; /* Adjust based on footer height */
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: #1F235B;
+}
+
+/* Navbar Customization */
+#nav_header {
+    background-color: #1F235B;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#logoHeader a {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+#logoHeader a:hover {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Buttons */
+#LogInBTN {
+    margin-right: 10px;
+    background-color: #1F235B;
+    border-color: #1F235B;
+    transition: all 0.3s ease;
+}
+
+#LogInBTN:hover {
+    background-color: #2C3168;
+    border-color: #2C3168;
+}
+
+#SignUpBTN a {
+    text-decoration: none;
+    color: white;
+    border-color: #1F235B;
+    color: #1F235B;
+}
+
+#SignUpBTN a:hover {
+    text-decoration: none;
+    background-color: #1F235B;
+    color: white;
+}
+
+#LogInBTN a {
+    text-decoration: none;
+    color: white;
+}
+
+#LogInBTN a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+/* Carousel Styling */
+.carousel-item {
+    height: 500px;
+    max-height: 600px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+#uniformCarousel img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Cards */
+#content_middle {
+    margin-top: 50px;
+}
+
+#text_header_content {
+    margin-bottom: 5px;
+}
+
+#text_content_upper {
+    margin-top: 5px;
+}
+
+/* Uniform items styling */
+.uniforms .card {
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.uniforms .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.uniforms .card-img-top {
+    padding: 1rem;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+.uniforms .card:hover {
+    transform: scale(1.02);
+}
+
+.uniforms .card:hover .card-img-top {
+    transform: scale(0.98);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .login-container {
+        padding: 20px;
+        margin: 0 15px;
+    }
+}
+
+/* Global Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Form Responsiveness */
+    .signup-container,
+    .login-container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    .whole-body {
+        border-radius: 10px;
+        margin: 0;
+    }
+
+    .signup-header,
+    .login-header {
+        padding: 15px;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .signup-header img,
+    .login-header img {
+        max-width: 60px;
+        margin-bottom: 10px;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Order Form Responsiveness */
+    .order-container {
+        padding: 0 15px;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    /* Improve Touch Targets */
+    .btn, 
+    .form-control, 
+    .input-group-text {
+        min-height: 44px;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+    }
+
+    /* Navbar Adjustments */
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-brand img {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+
+    .navbar-brand span {
+        font-size: 1rem;
+    }
+
+    /* Modal Responsiveness */
+    .modal-dialog {
+        margin: 1.75rem 10px;
+        max-width: calc(100% - 20px);
+    }
+}
+
+/* Mobile Responsiveness for Homepage */
+@media (max-width: 768px) {
+    .carousel-item img {
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 5%;
+    }
+
+    .display-5 {
+        font-size: 1.75rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+    .btn-lg {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+    }
+
+    .row.mt-5 .card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Improve touch targets */
+@media (max-width: 992px) {
+    .nav-link, .btn {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Login Form Styles */
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+/* Password Toggle */
+#togglePassword {
+    background: transparent;
+    border: none;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* Footer */
+#copyright {
+    margin-top: 5em;
+    background-color: #1F235B;
+    color: white;
+}
+
+.login-header h2 {
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* Content Form */
+#contentform {
+    margin-top: 2em;
+    padding: 2em;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Homepage Specific Styles */
+#contentform .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #1F235B;
+}
+
+#contentform .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(31, 35, 91, 0.1);
+}
+
+#contentform .list-group-item {
+    background-color: transparent;
+    border-color: rgba(31, 35, 91, 0.125);
+    padding: 1rem 1.25rem;
+}
+
+#contentform .list-group-numbered > li::before {
+    background-color: #1F235B;
+    color: white;
+    font-weight: bold;
+}
+
+.ordering-steps .list-group-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.ordering-steps .list-group-item-icon {
+    background-color: #1F235B;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Uniform Details Card */
+.uniform-details .card-title {
+    color: #1F235B;
+    border-bottom: 2px solid #1F235B;
+    padding-bottom: 0.5rem;
+}
+
+/* Start Ordering Button */
+.start-ordering-btn {
+    background: linear-gradient(to right, #1F235B, #2C3168);
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.start-ordering-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(31, 35, 91, 0.2);
+}
+
+.orderBTN {
+    background: linear-gradient(to right, #1F235B, #2C3168);
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.orderBTN:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(31, 35, 91, 0.2);
+}
+
+.orderBTN a {
+    text-decoration: none;
+    color: white;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
