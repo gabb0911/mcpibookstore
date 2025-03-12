@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCPI PE Uniform Ordering</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="Stylesheet.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="top-section">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/mcpilogotransparent.png" alt="MCPI Logo" width="50" height="50" class="me-3">
+                <strong>MCPI PE Uniform Ordering System</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#catalog">Catalog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="loginForm.html">Order Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+                <div class="bg-light p-4 rounded-3 shadow-sm">
+                    <h1 class="display-5 text-primary mb-4">Welcome to MCPI PE Uniform Ordering</h1>
+                    <p class="lead text-muted mb-4">
+                        Streamline your PE uniform ordering process with our easy-to-use platform. 
+                        Designed specifically for Maryknoll College of Panabo Inc. students.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row gap-3">
+                        <a href="loginForm.html" class="btn btn-primary btn-lg flex-grow-1">
+                            <i class="fas fa-sign-in-alt me-2"></i>Log In to Order
+                        </a>
+                        <a href="signupForm.html" class="btn btn-outline-primary btn-lg flex-grow-1">
+                            <i class="fas fa-user-plus me-2"></i>Sign Up
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div id="uniformCarousel" class="carousel slide shadow-sm rounded-3 overflow-hidden" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/pebackshirt.png" class="d-block w-100" alt="PE Uniform Front View">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/pefrontshirt.png" class="d-block w-100" alt="PE Uniform Back View">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/pefrontjog.png" class="d-block w-100" alt="PE Uniform Back View">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/pejogback.png" class="d-block w-100" alt="PE Uniform Back View">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#uniformCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#uniformCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card border-primary">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary mb-3">
+                            <i class="fas fa-info-circle me-2"></i>About PE Uniform Ordering
+                        </h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Easy Online Ordering</strong>: Place your PE uniform order from the comfort of your fit.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Multiple Sizes Available</strong>: Choose from a range of sizes to find your perfect fit.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Notify</strong>: Will notify you when your order is ready to pick up.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4 display-6" id="catalog">PE Uniform Catalog</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">XS Size</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱750</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Standard Fit</li>
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline-primary w-100 orderBTN"><a href="#">Order Now</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">S Size</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱750</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Standard Fit</li>
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline-primary w-100 orderBTN"><a href="#">Order Now</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">M Size</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱750</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Standard Fit</li>
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline-primary w-100 orderBTN"><a href="#">Order Now</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">XL Size</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱275</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Extended Fit</li>
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline-primary w-100 orderBTN"><a href="#">Order Now</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">XXL Size</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱400</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Extra Extended Fit</li>
+                            <li class="list-group-item">
+                                <span class="badge bg-warning text-dark">Limited Stock</span>
+                            </li>
+                        </ul>
+                        <button class="btn btn-outline-primary w-100 orderBTN"><a href="#">>Order Now</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark fixed-bottom text-white py-3 mt-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 MCPI PE Uniform Ordering System. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const orderButtons = document.querySelectorAll('.orderBTN');
+            orderButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.getElementById('top-section').scrollIntoView({ 
+                        behavior: 'smooth' 
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

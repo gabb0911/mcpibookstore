@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PE Uniform Catalog - MCPI Ordering System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="Stylesheet.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="dashboard.html">
+                <img src="images/mcpilogotransparent.png" alt="MCPI Logo" width="50" height="50" class="me-3">
+                <strong>MCPI PE Uniform Ordering System</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="catalog.html">Catalog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light" href="loginForm.html">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4 display-6">PE Uniform Catalog</h1>
+
+        <div class="alert alert-info mb-5 p-4 shadow-sm border-start border-info border-4">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-info-circle me-3 fs-4"></i>
+                <div>
+                    <h5 class="mb-1">Important Notice</h5>
+                    <p class="mb-0">Size measurements may vary. To ensure the best fit and comfort, we recommend visiting the bookstore to verify your measurements in person.</p>
+                    <p class="mb-0">Notice for grade school. As the size might vary, we recommend visiting the bookstore to verify your child's measurements in person for the perfect fit and comfort.</p>
+                </div>
+                
+            </div>
+        </div>
+        <div class="row row-cols-3 row-cols-md-3 g-3 mb-4 uniforms">
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">Package A</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱700</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                            <li class="list-group-item">
+                                <p>In this package, you will receive: Both jogging pants and T-shirt</p>
+                                <p>Sizes Available: #18, XS, S, M, L, XL</p>
+                            </li>
+                        </ul>
+                        <a href="orderForm.html" class="btn btn-outline-primary w-100 order-btn" data-size="XS">Order</a>
+                    </div>
+                </div>
+            </div>   
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">Package B</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱800</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                            <li class="list-group-item">
+                                <p>In this package, you will receive: Both jogging pants and T-shirt</p>
+                                <p>Sizes Available: 2XL, 3XL, 4XL</p>
+                            </li>
+                        </ul>
+                        <a href="orderForm.html" class="btn btn-outline-primary w-100 order-btn" data-size="XS">Order</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">Package C</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱600</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                            <li class="list-group-item">
+                                <p>In this package, you will receive: Both jogging pants and T-shirt</p>
+                                <p>Sizes Available: #16, #14, #12, #10, #8</p>
+                            </li>
+                        </ul>
+                        <a href="orderForm.html" class="btn btn-outline-primary w-100 order-btn" data-size="XS">Order</a>
+                    </div>
+                </div>
+            </div>     
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4 uniforms">
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="images/pefrontjog.png" class="card-img-top" alt="PE Uniform Front View">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">XS Size (Jogging Pants)</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱420</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Standard Fit</li>
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Hips:</strong> 33 - 34 inches<br>
+                                <strong>Waist:</strong> 25 - 27 inches
+                            </li>
+                        </ul>
+                        <a href="orderForm.html" class="btn btn-outline-primary w-100 order-btn" data-size="XS">Order</a>
+                    </div>
+                </div>
+            </div>    
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="images/pefrontshirt.png" class="card-img-top" alt="PE Uniform Side View">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">XS Size (T-Shirt)</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱330</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Standard Fit</li>
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Chest:</strong> 32 - 34 inches<br>
+                                <strong>Waist:</strong> 25 - 27 inches
+                            </li>
+                        </ul>
+                        <a href="orderForm.html" class="btn btn-outline-primary w-100 order-btn" data-size="S">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="images/pefrontjog.png" class="card-img-top" alt="PE Uniform Front View">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">S Size (Jogging Pants)</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱420</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Standard Fit</li>
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Hips:</strong> 35 - 37 inches<br>
+                                <strong>Waist:</strong> 28 - 30 inches
+                            </li>
+                        </ul>
+                        <a href="orderForm.html" class="btn btn-outline-primary w-100 order-btn" data-size="XS">Order</a>
+                    </div>
+                </div>
+            </div>    
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="images/pefrontshirt.png" class="card-img-top" alt="PE Uniform Side View">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">S Size (T-Shirt)</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱330</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Standard Fit</li>
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Chest:</strong> 35 - 37 inches<br>
+                                <strong>Waist:</strong> 28 - 30 inches
+                            </li>
+                        </ul>
+                        <a href="orderForm.html" class="btn btn-outline-primary w-100 order-btn" data-size="S">Order</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="images/pefrontjog.png" class="card-img-top" alt="PE Uniform Back View">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">M Size (Jogging Pants)</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱420</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Standard Fit</li>
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Hips:</strong> 38 - 40 inches<br>
+                                <strong>Waist:</strong> 31 - 33 inches
+                            </li>
+                        </ul>
+                        <a href="orderForm.html" class="btn btn-outline-primary w-100 order-btn" data-size="M">Order</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="images/pefrontshirt.png" class="card-img-top" alt="PE Uniform Large Size">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">M Size (T-Shirt)</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱330</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Extended Fit</li>
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Chest:</strong> 38 - 40 inches<br>
+                                <strong>Waist:</strong> 31 - 33 inches
+                            </li>
+                        </ul>
+                        <a href="orderForm.html" class="btn btn-outline-primary w-100 order-btn" data-size="Large">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="images/pefrontjog.png" class="card-img-top" alt="PE Uniform Back View">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">L Size (Jogging Pants)</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱420</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Standard Fit</li>
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Hips:</strong> 41 - 44 inches<br>
+                                <strong>Waist:</strong> 34 - 37 inches
+                            </li>
+                        </ul>
+                        <a href="orderForm.html" class="btn btn-outline-primary w-100 order-btn" data-size="M">Order</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="images/pefrontshirt.png" class="card-img-top" alt="PE Uniform Large Size">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">L Size (T-Shirt)</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱330</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Extended Fit</li>
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Chest:</strong> 41 - 44 inches<br>
+                                <strong>Waist:</strong> 34 - 37 inches
+                            </li>
+                        </ul>
+                        <a href="orderForm.html" class="btn btn-outline-primary w-100 order-btn" data-size="Large">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="images/pefrontjog.png" class="card-img-top" alt="PE Uniform Back View">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">XL Size (Jogging Pants)</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱420</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Standard Fit</li>
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Hips:</strong> 45 - 48 inches<br>
+                                <strong>Waist:</strong> 38 - 41 inches
+                            </li>
+                        </ul>
+                        <a href="orderForm.html" class="btn btn-outline-primary w-100 order-btn" data-size="M">Order</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="images/pefrontshirt.png" class="card-img-top" alt="PE Uniform Large Size">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">XL Size (T-Shirt)</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱330</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Extended Fit</li>
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Chest:</strong> 45 - 48 inches<br>
+                                <strong>Waist:</strong> 38 - 41 inches
+                            </li>
+                        </ul>
+                        <a href="orderForm.html" class="btn btn-outline-primary w-100 order-btn" data-size="Large">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="images/pefrontjog.png" class="card-img-top" alt="PE Uniform Back View">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">XL2 Size (Jogging Pants)</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱480</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Standard Fit</li>
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Hips:</strong> 49 - 52 inches<br>
+                                <strong>Waist:</strong> 42 - 45 inches
+                            </li>
+                        </ul>
+                        <a href="orderForm.html" class="btn btn-outline-primary w-100 order-btn" data-size="M">Order</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="images/pefrontshirt.png" class="card-img-top" alt="PE Uniform Large Size">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">XL2 Size (T-Shirt)</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱370</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Extended Fit</li>
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Chest:</strong> 49 - 52 inches<br>
+                                <strong>Waist:</strong> 42 - 45 inches
+                            </li>
+                        </ul>
+                        <a href="orderForm.html" class="btn btn-outline-primary w-100 order-btn" data-size="Large">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="images/pefrontjog.png" class="card-img-top" alt="PE Uniform Back View">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">XL3 Size (Jogging Pants)</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱480</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Standard Fit</li>
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Hips:</strong> 53 - 56 inches<br>
+                                <strong>Waist:</strong> 46 - 49 inches
+                            </li>
+                        </ul>
+                        <a href="orderForm.html" class="btn btn-outline-primary w-100 order-btn" data-size="M">Order</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="images/pefrontshirt.png" class="card-img-top" alt="PE Uniform Large Size">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">XL3 Size (T-Shirt)</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱370</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Extended Fit</li>
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Chest:</strong> 53 - 56 inches<br>
+                                <strong>Waist:</strong> 46 - 49 inches
+                            </li>
+                        </ul>
+                        <a href="orderForm.html" class="btn btn-outline-primary w-100 order-btn" data-size="Large">Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="images/pefrontjog.png" class="card-img-top" alt="PE Uniform Back View">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">XL4 Size (Jogging Pants)</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱480</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Standard Fit</li>
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Hips:</strong> 54 – 58 inches<br>
+                                <strong>Waist:</strong> 50 – 54.5 inches
+                            </li>
+                        </ul>
+                        <a href="orderForm.html" class="btn btn-outline-primary w-100 order-btn" data-size="M">Order</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="images/pefrontshirt.png" class="card-img-top" alt="PE Uniform Large Size">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="card-title mb-0">XL4 Size (T-Shirt)</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3 class="card-text text-success mb-3">₱370</h3>
+                        <ul class="list-group list-group-flush mb-3">
+                            <li class="list-group-item">Extended Fit</li>
+                            <li class="list-group-item">
+                                <span class="badge bg-success">In Stock</span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Chest:</strong> 58 - 63 inches<br>
+                                <strong>Waist:</strong> 52 - 57 inches
+                            </li>
+                        </ul>
+                        <a href="orderForm.html" class="btn btn-outline-primary w-100 order-btn" data-size="Large">Order</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-5 mt-3">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 MCPI PE Uniform Ordering System. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { 
+            getAuth, 
+            onAuthStateChanged 
+        } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+        import { 
+            getFirestore, 
+            doc, 
+            getDoc 
+        } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDTIh_AcxzTh6zMgcqnuP0UVr0EB_Gx1Oc",
+            authDomain: "mcpi-ordering-system.firebaseapp.com",
+            projectId: "mcpi-ordering-system",
+            storageBucket: "mcpi-ordering-system.appspot.com",
+            messagingSenderId: "1015780794374",
+            appId: "1:1015780794374:web:3f33c9d41faa9b9c3f2b05"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // Enhanced User Profile Retrieval
+        async function fetchUserProfile(user) {
+            try {
+                // Attempt to fetch user document from Firestore
+                const userDocRef = doc(db, 'users', user.uid);
+                const userDocSnap = await getDoc(userDocRef);
+
+                if (userDocSnap.exists()) {
+                    const userData = userDocSnap.data();
+                    console.log('Fetched User Data:', userData);
+
+                    // Update profile information elements
+                    const profileNameElement = document.getElementById('profileName');
+                    const profileEmailElement = document.getElementById('profileEmail');
+                    const profileStatusElement = document.getElementById('profileStatus');
+
+                    if (profileNameElement) {
+                        profileNameElement.textContent = `${userData.firstName || ''} ${userData.lastName || ''}`.trim() || 'Name Not Available';
+                    }
+
+                    if (profileEmailElement) {
+                        profileEmailElement.textContent = user.email || 'Email Not Available';
+                    }
+
+                    if (profileStatusElement) {
+                        profileStatusElement.textContent = userData.status || 'Active';
+                    }
+
+                    return userData;
+                } else {
+                    console.warn('No user document found in Firestore');
+                    
+                    // Fallback to authentication information
+                    const profileNameElement = document.getElementById('profileName');
+                    const profileEmailElement = document.getElementById('profileEmail');
+                    const profileStatusElement = document.getElementById('profileStatus');
+
+                    if (profileNameElement) {
+                        profileNameElement.textContent = 'User Profile Incomplete';
+                    }
+                    if (profileEmailElement) {
+                        profileEmailElement.textContent = user.email || 'Email Not Available';
+                    }
+                    if (profileStatusElement) {
+                        profileStatusElement.textContent = 'Pending Verification';
+                    }
+
+                    return null;
+                }
+            } catch (error) {
+                console.error('Error fetching user profile:', error);
+                
+                // Error handling for profile retrieval
+                const profileNameElement = document.getElementById('profileName');
+                const profileEmailElement = document.getElementById('profileEmail');
+                const profileStatusElement = document.getElementById('profileStatus');
+
+                if (profileNameElement) {
+                    profileNameElement.textContent = 'Profile Retrieval Failed';
+                }
+                if (profileEmailElement) {
+                    profileEmailElement.textContent = user.email || 'Email Not Available';
+                }
+                if (profileStatusElement) {
+                    profileStatusElement.textContent = 'Error';
+                }
+
+                return null;
+            }
+        }
+
+        // Authentication State Observer
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                console.log('User authenticated:', {
+                    uid: user.uid,
+                    email: user.email
+                });
+
+                // Fetch and display user profile
+                await fetchUserProfile(user);
+            } else {
+                console.warn('No user is signed in');
+                
+                // Reset profile information
+                const profileElements = [
+                    'profileName', 
+                    'profileEmail', 
+                    'profileStatus'
+                ];
+
+                profileElements.forEach(elementId => {
+                    const element = document.getElementById(elementId);
+                    if (element) {
+                        element.textContent = 'Not Logged In';
+                    }
+                });
+            }
+        });
+
+        // Add event listeners to all "Order Now" buttons
+        document.querySelectorAll('.order-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Get the uniform size from the button's data attribute
+                const uniformSize = this.getAttribute('data-size');
+                
+                // Store the uniform size in localStorage to pass to order form
+                localStorage.setItem('selectedUniformSize', uniformSize);
+                
+                // Redirect to order form
+                window.location.href = 'orderForm.html';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - MCPI PE Uniform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="Stylesheet.css" rel="stylesheet">
+    <style>
+        .badge {
+            font-size: 0.9em;
+            padding: 0.5em 0.8em;
+        }
+        .table td {
+            vertical-align: middle;
+        }
+        .table-wrapper {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+        }
+        .table-wrapper table {
+            margin-bottom: 0;
+        }
+        .table-wrapper thead th {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 1;
+            border-top: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="dashboard.html">
+                <img src="images/mcpilogotransparent.png" alt="MCPI Logo" width="50" height="50" class="me-3">
+                <strong>MCPI PE Uniform Ordering System</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalog.html">Catalog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="panelBtn">Panel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light" href="homepage.html">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="mb-0" id="userGreeting">Welcome, Student!</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Profile Information</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><strong>Name:</strong> <span id="userName">Juan Dela Cruz</span></p>
+                                        <p><strong>School Level:</strong> <span id="userLevel">Senior High School</span></p>
+                                        <p><strong>Email:</strong> <span id="userContact">09123456789</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Order Status</h5>
+                                    </div>
+                                    <div class="card-body" id="orderStatusContainer">
+                                        <div class="table-wrapper">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Order Date</th>
+                                                        <th>Type</th>
+                                                        <th>Size</th>
+                                                        <th>Price</th>
+                                                        <th>Status</th>
+                                                        <th>Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="orderTableBody">
+                                                    <!-- Orders will be dynamically added here -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <a href="catalog.html" class="btn btn-primary btn-lg w-100 mb-3">View PE Uniform Catalog</a>
+                        <p class="text-muted">Browse and order your PE uniform</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="roleToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto" id="roleToastTitle">Role Status</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div id="roleToastBody" class="toast-body">
+                <!-- Role status will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cancel Order Modal -->
+    <div class="modal fade" id="cancelModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title">Cancel Order</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to cancel this order?</p>
+                    <p class="mb-0 text-muted">This action cannot be undone.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, Keep Order</button>
+                    <button type="button" class="btn btn-danger" id="confirmCancelBtn">Yes, Cancel Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-3 mt-4 fixed-bottom">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 MCPI PE Uniform Ordering System. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="firebase-config.js" type="module"></script>
+    <script type="module"> 
+        import { 
+            auth, 
+            db, 
+            onAuthStateChanged,
+            doc,
+            getDoc,
+            updateDoc,
+            serverTimestamp,
+            collection,
+            query,
+            where,
+            orderBy,
+            getDocs,
+            deleteDoc
+        } from './firebase-config.js';
+
+        // Initialize Bootstrap Modal
+        const cancelModal = new bootstrap.Modal(document.getElementById('cancelModal'));
+        let orderIdToCancel = null;
+
+        // Add event listener for panel button
+        document.getElementById('panelBtn').addEventListener('click', async (e) => {
+            e.preventDefault();
+            const user = auth.currentUser;
+            if (user) {
+                console.log('Checking admin access for user:', user.uid);
+                try {
+                    const userDocRef = doc(db, 'users', user.uid);
+                    const userDocSnap = await getDoc(userDocRef);
+                    console.log('User data:', userDocSnap.data());
+
+                    if (userDocSnap.exists()) {
+                        const userData = userDocSnap.data();
+                        console.log('User role:', userData.role);
+                        
+                        if (userData.role === 'admin') {
+                            console.log('Admin access granted, redirecting to admin panel');
+                            window.location.href = 'admin.html';
+                        } else {
+                            console.log('Not an admin, showing toast');
+                            showRoleToast('You do not have admin privileges.', false);
+                        }
+                    } else {
+                        console.log('User document does not exist');
+                        showRoleToast('Error: User profile not found.', false);
+                    }
+                } catch (error) {
+                    console.error('Error checking admin status:', error);
+                    showRoleToast('Error checking admin status.', false);
+                }
+            } else {
+                console.log('No user logged in');
+                window.location.href = 'loginForm.html';
+            }
+        });
+
+        // Add event listener for confirm cancel button
+        document.getElementById('confirmCancelBtn').addEventListener('click', async () => {
+            if (orderIdToCancel) {
+                try {
+                    await cancelOrder(orderIdToCancel);
+                    cancelModal.hide();
+                    orderIdToCancel = null;
+                } catch (error) {
+                    console.error('Error cancelling order:', error);
+                    showAlert('Failed to cancel order', 'danger');
+                }
+            }
+        });
+
+        // Function to show cancel confirmation modal
+        window.showCancelConfirmation = function(orderId) {
+            orderIdToCancel = orderId;
+            cancelModal.show();
+        };
+        
+        document.getElementById('confirmCancelBtn').addEventListener('click', async () => {
+            if (orderIdToCancel) {
+                try {
+                    await cancelOrder(orderIdToCancel);
+                    cancelModal.hide();
+                    orderIdToCancel = null;
+                } catch (error) {
+                    console.error('Error cancelling order:', error);
+                    showAlert('Failed to cancel order', 'danger');
+                }
+            }
+        });
+
+        // Fetch user profile data from Firestore
+        async function fetchUserProfile(user) {
+            try {
+                const userName = user.email ? user.email.split('@')[0] : 'Student';
+                document.getElementById('userName').textContent = userName;
+                document.getElementById('userGreeting').textContent = `Welcome, ${userName}!`;
+                document.getElementById('userContact').textContent = user.email || 'No Email';
+                document.getElementById('userLevel').textContent = 'MCPI Student'; 
+
+                const userDocRef = doc(db, 'users', user.uid);
+                const userDocSnap = await getDoc(userDocRef);
+
+                if (userDocSnap.exists()) {
+                    const userData = userDocSnap.data();
+                    if (userData.firstName && userData.lastName) {
+                        document.getElementById('userName').textContent = `${userData.firstName} ${userData.lastName}`;
+                        document.getElementById('userGreeting').textContent = `Welcome, ${userData.firstName} ${userData.lastName}!`;
+                    }
+                    if (userData.grade) {
+                        document.getElementById('userLevel').textContent = userData.grade;
+                    }
+                }
+            } catch (error) {
+                console.error('Error fetching user profile:', error);
+            }
+        }
+
+        async function removeOrder(orderId) {
+            try {
+                const orderRef = doc(db, 'peUniformOrders', orderId);
+                await deleteDoc(orderRef);
+                await updateOrderStatus(auth.currentUser);
+                alert('Order removed successfully');
+            } catch (error) {
+                console.error('Error removing order:', error);
+                alert('Failed to remove the order.');
+            }
+        }
+
+        // Function to cancel order
+        async function cancelOrder(orderId) {
+            try {
+                const orderRef = doc(db, 'peUniformOrders', orderId);
+                await updateDoc(orderRef, {
+                    status: 'cancelled',
+                    updatedAt: serverTimestamp()
+                });
+                showAlert('Order cancelled successfully', 'success');
+
+                const auth = getAuth();
+                const currentUser = auth.currentUser;
+                if (currentUser) {
+                    await updateOrderStatus(currentUser);
+                } else {
+                    console.error('No user is currently signed in');
+                    showAlert('Error updating order status: User not signed in', 'danger');
+                }
+
+            } catch (error) {
+                console.error('Error cancelling order:', error);
+                showAlert('Failed to cancel order', 'danger');
+            }
+        }
+
+        // Make cancelOrder available globally
+        window.cancelOrder = cancelOrder;
+
+        // Function to show alerts
+        function showAlert(message, type) {
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+            alertDiv.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            `;
+            document.querySelector('.container').insertAdjacentElement('afterbegin', alertDiv);
+            setTimeout(() => alertDiv.remove(), 5000);
+        }
+             
+        window.showCancelConfirmation = function(orderId) {
+            orderIdToCancel = orderId;
+            cancelModal.show();
+        };
+        
+        document.getElementById('confirmCancelBtn').addEventListener('click', async () => {
+            if (orderIdToCancel) {
+                try {
+                    await cancelOrder(orderIdToCancel);
+                    cancelModal.hide();
+                    orderIdToCancel = null;
+                } catch (error) {
+                    console.error('Error cancelling order:', error);
+                    showAlert('Failed to cancel order', 'danger');
+                }
+            }
+        });
+
+        // Fetch order status data from Firestore
+        async function updateOrderStatus(user) {
+            const orderTableBody = document.getElementById('orderTableBody');
+            orderTableBody.innerHTML = '';
+
+            try {
+                const ordersRef = collection(db, 'peUniformOrders');
+                const q = query(ordersRef, where('userId', '==', user.uid), orderBy('createdAt', 'desc'));
+                const querySnapshot = await getDocs(q);
+
+                if (querySnapshot.empty) {
+                    orderTableBody.innerHTML = '<tr><td colspan="6" class="text-center">No orders found.</td></tr>';
+                } else {
+                    querySnapshot.forEach((doc) => {
+                        const order = doc.data();
+                        const orderId = doc.id;
+                        const orderDate = order.createdAt ? new Date(order.createdAt.toDate()).toLocaleString() : 'N/A';
+                        const status = order.status || 'pending';
+                        
+                        const statusBadgeClass = {
+                            'pending': 'bg-warning',
+                            'approved': 'bg-success',
+                            'cancelled': 'bg-danger'
+                        }[status] || 'bg-secondary';
+
+                        const orderRow = `
+                            <tr>
+                                <td>${orderDate}</td>
+                                <td>${order.uniformType}</td>
+                                <td>${order.uniformSize}</td>
+                                <td>${order.price || 'N/A'}</td>
+                                <td>
+                                    <span class="badge ${statusBadgeClass}">
+                                        ${status.toUpperCase()}
+                                    </span>
+                                </td>
+                                <td>
+                                    ${status === 'pending' ? `
+                                        <button class="btn btn-sm btn-danger" onclick="showCancelConfirmation('${orderId}')">
+                                            Cancel Order
+                                        </button>
+                                    ` : status === 'approved' ? `
+                                        <button class="btn btn-sm btn-danger" disabled title="Cannot cancel approved orders">
+                                            Cancel Order
+                                        </button>
+                                    ` : ''}
+                                </td>
+                            </tr>
+                        `;
+                        orderTableBody.innerHTML += orderRow;
+                    });
+                }
+            } catch (error) {
+                console.error('Error fetching orders:', error);
+                showAlert('Failed to fetch orders', 'danger');
+            }
+        }
+
+        function showRoleToast(message, success = true) {
+            const toastTitle = document.getElementById('roleToastTitle');
+            const toastBody = document.getElementById('roleToastBody');
+            const toast = new bootstrap.Toast(document.getElementById('roleToast'));
+
+            toastTitle.textContent = success ? 'Welcome Admin!' : 'Welcome Student!';
+            toastBody.innerHTML = message;
+
+            toast.show();
+        }
+
+        // Modify checkUserRole to use toast notifications instead of modals
+        async function checkUserRole() {
+            const user = auth.currentUser;
+
+            if (user) {
+                try {
+                    const userDocRef = doc(db, 'users', user.uid);
+                    const userDocSnap = await getDoc(userDocRef);
+
+                    if (userDocSnap.exists()) {
+                        const userData = userDocSnap.data();
+                        const userRole = userData.role || 'student'; // Default to 'student'
+
+                        if (userRole === 'admin') {
+                            showRoleToast('You are an admin.', true);
+                        } else {
+                            showRoleToast('Welcome to PE ordering system.', false);
+                        }
+                    } else {
+                        console.error("User document not found.");
+                    }
+                } catch (error) {
+                    console.error('Error checking user role:', error);
+                }
+            } else {
+                console.error('No user is logged in.');
+            }
+        }
+
+        window.showOrderDetails = async function(orderId) {
+        try {
+            const orderRef = doc(db, 'peUniformOrders', orderId);
+            const orderDocSnap = await getDoc(orderRef);
+
+            if (orderDocSnap.exists()) {
+            const order = orderDocSnap.data();
+            const orderDate = order.createdAt ? new Date(order.createdAt.toDate()).toLocaleDateString() : 'Processing';
+            
+            // Show order details modal
+            const modalHTML = `
+                <div class="modal fade" id="orderDetailsModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Order Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                        <small class="text-muted">Order ID:</small>
+                        <p class="fw-bold">${orderId}</p>
+                        </div>
+                        <div class="row">
+                        <div class="col-6 mb-3">
+                            <small class="text-muted">Order Date:</small>
+                            <p class="fw-bold">${orderDate}</p>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <small class="text-muted">Status:</small>
+                            <p class="fw-bold">${order.status ? order.status.toUpperCase() : 'PENDING'}</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+            const modal = new bootstrap.Modal(document.getElementById('orderDetailsModal'));
+            modal.show();
+            } else {
+            console.error('Order not found');
+            }
+        } catch (error) {
+            console.error('Error fetching order details:', error);
+            alert('You cannot view these details.');
+        }
+        };
+
+
+
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                await fetchUserProfile(user);
+                await updateOrderStatus(user);
+                await checkUserRole();try {
+                const userDocRef = doc(db, 'users', user.uid);
+                const userDocSnap = await getDoc(userDocRef);
+
+                if (userDocSnap.exists()) {
+                    const userData = userDocSnap.data();
+                    const userRole = userData.role || 'student'; // Default to 'student'
+
+                    // Check the user's role and enable/disable the "Panel" button
+                    if (userRole === 'admin') {
+                        document.getElementById('panelBtn').disabled = false; // Enable the button
+                        document.getElementById('panelBtn').addEventListener('click', () => {
+                            window.location.href = 'admin.html';
+                        });
+                    } else {
+                        document.getElementById('panelBtn').disabled = true; // Disable the button
+                    }
+                    } else {
+                        console.error("User document not found.");
+                        document.getElementById('panelBtn').disabled = true; // Disable if no user data
+                    }
+                } catch (error) {
+                    console.error('Error checking user role:', error);
+                    document.getElementById('panelBtn').disabled = true; // Disable on error
+                }
+            } else {
+                console.error('No user is logged in.');
+                document.getElementById('panelBtn').disabled = true; // Disable if no user is logged in
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const removeButtons = document.querySelectorAll('.removeOrder');
+            
+            removeButtons.forEach((button) => {
+                button.addEventListener('click', function () {
+                    const orderId = this.getAttribute('data-order-id');
+                    removeOrder(orderId);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

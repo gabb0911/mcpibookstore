@@ -1,11 +1,11 @@
 {
   "indexes": [
     {
-      "collectionGroup": "peUniformOrders",
+      "collectionGroup": "uniformOrders",
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "userId",
+          "fieldPath": "uid",
           "order": "ASCENDING"
         },
         {
